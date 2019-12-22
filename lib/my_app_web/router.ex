@@ -1,5 +1,5 @@
-defmodule LiveViewTodosWeb.Router do
-  use LiveViewTodosWeb, :router
+defmodule MyAppWeb.Router do
+  use MyAppWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -14,7 +14,7 @@ defmodule LiveViewTodosWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", LiveViewTodosWeb do
+  scope "/", MyAppWeb do
     pipe_through :browser
 
     get "/", PageController, :index
@@ -22,7 +22,7 @@ defmodule LiveViewTodosWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", LiveViewTodosWeb do
+  # scope "/api", MyAppWeb do
   #   pipe_through :api
   # end
 end

@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :live_view_todos,
-  ecto_repos: [LiveViewTodos.Repo]
+config :my_app,
+  ecto_repos: [MyApp.Repo]
 
 # Configures the endpoint
-config :live_view_todos, LiveViewTodosWeb.Endpoint,
+config :my_app, MyAppWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "moPCNuBiEFuE8xooIWKR1XmYFIH45wpns1qA/z6aEWAZV5I6nKHAQcIWkDWeG5H3",
-  render_errors: [view: LiveViewTodosWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: LiveViewTodos.PubSub, adapter: Phoenix.PubSub.PG2],
+  render_errors: [view: MyAppWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: MyApp.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [
     signing_salt: "sSjLpHWHZch6acCNNl/PnjRYFedLNFo8"
   ]

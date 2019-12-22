@@ -1,9 +1,9 @@
-defmodule LiveViewTodosWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :live_view_todos
+defmodule MyAppWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :my_app
 
   socket "/live", Phoenix.LiveView.Socket
 
-  socket "/socket", LiveViewTodosWeb.UserSocket,
+  socket "/socket", MyAppWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -13,7 +13,7 @@ defmodule LiveViewTodosWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :live_view_todos,
+    from: :my_app,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -41,8 +41,8 @@ defmodule LiveViewTodosWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_live_view_todos_key",
+    key: "_my_app_key",
     signing_salt: "qCu7r6W6"
 
-  plug LiveViewTodosWeb.Router
+  plug MyAppWeb.Router
 end
