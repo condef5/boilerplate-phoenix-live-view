@@ -1,12 +1,12 @@
-defmodule LiveViewTodosWeb do
+defmodule MyAppWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use LiveViewTodosWeb, :controller
-      use LiveViewTodosWeb, :view
+      use MyAppWeb, :controller
+      use MyAppWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,11 +19,11 @@ defmodule LiveViewTodosWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: LiveViewTodosWeb
+      use Phoenix.Controller, namespace: MyAppWeb
 
       import Plug.Conn
-      import LiveViewTodosWeb.Gettext
-      alias LiveViewTodosWeb.Router.Helpers, as: Routes
+      import MyAppWeb.Gettext
+      alias MyAppWeb.Router.Helpers, as: Routes
       import Phoenix.LiveView.Controller
     end
   end
@@ -31,8 +31,8 @@ defmodule LiveViewTodosWeb do
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/live_view_todos_web/templates",
-        namespace: LiveViewTodosWeb
+        root: "lib/my_app_web/templates",
+        namespace: MyAppWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
@@ -40,9 +40,9 @@ defmodule LiveViewTodosWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import LiveViewTodosWeb.ErrorHelpers
-      import LiveViewTodosWeb.Gettext
-      alias LiveViewTodosWeb.Router.Helpers, as: Routes
+      import MyAppWeb.ErrorHelpers
+      import MyAppWeb.Gettext
+      alias MyAppWeb.Router.Helpers, as: Routes
       import Phoenix.LiveView,
         only: [live_render: 2, live_render: 3, live_link: 1, live_link: 2]
     end
@@ -60,7 +60,7 @@ defmodule LiveViewTodosWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import LiveViewTodosWeb.Gettext
+      import MyAppWeb.Gettext
     end
   end
 

@@ -2,8 +2,8 @@
 
 set -e
 
-CURRENT_NAME="LiveViewTodos"
-CURRENT_OTP="live_view_todos"
+CURRENT_NAME="MyApp"
+CURRENT_OTP="my_app"
 
 NEW_NAME="NewProject"
 NEW_OTP="new_project"
@@ -22,3 +22,8 @@ mv lib/${CURRENT_OTP}_web lib/${NEW_OTP}_web
 
 # rename name of test
 mv test/${CURRENT_OTP}_web test/${NEW_OTP}_web
+
+# delete empty directories
+find . -empty -type d -delete
+
+echo "✓ Done"

@@ -1,4 +1,4 @@
-defmodule LiveViewTodosWeb.SpaceLive do
+defmodule MyAppWeb.SpaceLive do
   use Phoenix.LiveView
 
   def mount(_session, socket) do
