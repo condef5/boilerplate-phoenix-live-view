@@ -18,6 +18,7 @@ defmodule LiveViewTodosWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    live "/space", SpaceLive
   end
 
   # Other scopes may use custom stacks.
